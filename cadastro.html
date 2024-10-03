@@ -62,11 +62,6 @@
     </header>
     <div class="row">
         <div class="col-md-6">
-            <!--<div id="feedbacks">
-                <div class="feedback">
-                    <p>Seja Bem-vindo(a), Obrigado por querer ajudar ao próximo.</p>
-                </div>
-            </div>-->
             <img id="buchinho" src="src/images/buchinho.png" alt="">
         </div>
         <div class="col-md-6">
@@ -74,7 +69,7 @@
                 <form id="form_cad" action="processar_cad.php" method="post">
                     <label for="nome">Nome:</label>
                     <br>
-                    <input class="input_form" type="text" id="nome" placeholder="ex: João Pereira">
+                    <input class="input_form" type="text" id="id_doador" placeholder="ex: João Pereira" minlength="3" maxlength="15">
                     <br>
                     <label for="cidade">Cidade:</label>
                     <br>
@@ -90,11 +85,23 @@
                     <select name="estado" id="estado">
                         <option value="">...</option>
                         <option value="Sp">São Paulo</option>
-                        <option value="Rj">Rio de Janeiro</option>
-                        <option value="Mg">Minas Gerais</option>
-                        <option value="Ba">Bahia</option>
-                        <option value="Df">Distrito Federal</option>
+                       
                     </select>
+                    <br>
+                    <label for="regiao">Região:</label>
+                    <br>
+                    <select name="estado" id="regiao">
+                        <option value="">...</option>
+                        <option value="zl">Zona Leste</option>
+                        <option value="zs">Zona Sul</option>
+                        <option value="zo">Zona Oeste</option>
+                        <option value="zn">Zona Norte</option>
+                    </select>
+                    <br>
+                    <br>
+                    <label for="telefone">Telefone:</label>
+                    <br>
+                    <input class="input_form" type="text" id="telefone" placeholder="ex: (11) 90000-0000" pattern="[0-9]{4}-[09]{4}">
                     <br>
                     <label for="email">Email:</label>
                     <br>
