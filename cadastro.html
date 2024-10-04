@@ -23,13 +23,13 @@
 
             <ul id="nav_list">
                 <li class="nav-item active">
-                    <a href="#home">Início</a>
+                    <a href="home.html">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#menu">Produtos</a>
+                    <a href="cadastro.html">Cadastre-se</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#testimonials">Histórias</a>
+                    <a href="login.html">Entrar</a>
                 </li>
             </ul>
 
@@ -45,13 +45,13 @@
         <div id="mobile_menu">
             <ul id="mobile_nav_list">
                 <li class="nav-item">
-                    <a href="#home">Início</a>
+                    <a href="home.html">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#menu">Produtos</a>
+                    <a href="cadastro.html">Cadastre-se</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#testimonials">Nossa história</a>
+                    <a href="login.html">Entrar</a>
                 </li>
             </ul>
 
@@ -67,25 +67,23 @@
         <div class="col-md-6">
             <div id="div_form">
                 <form id="form_cad" action="processar_cad.php" method="post">
+                    <h3>Cadastre-se</h3>
                     <label for="nome">Nome:</label>
                     <br>
-                    <input class="input_form" type="text" id="id_doador" placeholder="ex: João Pereira" minlength="3" maxlength="15">
+                    <input class="input_form" type="text" id="id_doador" placeholder="ex: João Pereira" minlength="3" maxlength="255">
                     <br>
-                    <label for="cidade">Cidade:</label>
+                    <label for="cidade">Estado:</label>
                     <br>
-                    <select name="cidade" id="cidade">
+                    <select name="cidade" id="estado">
                         <option value="...">...</option>
                         <option value="SP">São Paulo</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="BH">Belo Horizonte</option>
                     </select>
                     <br>
-                    <label for="estado">Estado:</label>
+                    <label for="estado">Cidade:</label>
                     <br>
-                    <select name="estado" id="estado">
+                    <select name="estado" id="cidade">
                         <option value="">...</option>
-                        <option value="Sp">São Paulo</option>
-                       
+                        <option value="Sp">SP</option>   
                     </select>
                     <br>
                     <label for="regiao">Região:</label>
