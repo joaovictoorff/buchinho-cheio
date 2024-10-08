@@ -8,9 +8,18 @@ CREATE TABLE Doadores (
     telefone VARCHAR(11),
     senha VARCHAR(255) NOT NULL,
     estado VARCHAR(2),
+    cidade ENUM('São_paulo')
     regiao ENUM('Norte', 'Nordeste', 'Centro-Oeste', 'Sudeste', 'Sul')
 );
-
+CREATE TABLE Doacoes (
+    id_doacao INT AUTO_INCREMENT PRIMARY KEY,
+    id_doador INT,
+    id_alimento INT,
+    quantidade_doada INT NOT NULL,
+    data_doacao DATE NOT NULL,
+    FOREIGN KEY (id_doador) REFERENCES Doadores(id_doador),
+    FOREIGN KEY (id_alimento) REFERENCES Alimentos(id_alimento)
+);
 
 CREATE TABLE Alimentos (
     id_alimento INT AUTO_INCREMENT PRIMARY KEY,
