@@ -77,7 +77,7 @@
                     <br>
                     <select name="estado" id="estado" required>
                         <option value="...">...</option>
-                        <option value="sao_paulo">São Paulo</option>
+                        <option value="sp">São Paulo</option>
                     </select>
                     <br>
                     <label for="cidade">Cidade:</label>

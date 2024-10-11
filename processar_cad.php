@@ -16,8 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Erro na preparação no cadastro: " . $conexao->error);
     }
 
-    // Corrigindo a ordem dos parâmetros
-    $stmt->bind_param("ssssis", $nome, $estado, $regiao, $telefone, $email, $senha_cripto);
+
+    $stmt->bind_param("ssssss", $nome, $estado, $regiao, $telefone, $email, $senha_cripto);
 
     if ($stmt->execute()) {
         header("Location: login.php");
