@@ -182,3 +182,96 @@ input[type="button"]:hover {
     text-align: center;
 }
 
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.body {
+    padding-top: 70px;
+}
+
+.container {
+    margin-top: 40px;
+}
+
+.ver-carrinho {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.ver-carrinho:hover {
+    background-color: #218838;
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal-content {
+    background-color: white;
+    margin: auto; /* Centraliza horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px; /* Diminuir largura do modal */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: absolute; /* Usar absolute para o centralizado */
+    top: 50%; /* Posiciona na metade da tela */
+    left: 50%; /* Posiciona na metade da tela */
+    transform: translate(-50%, -50%); /* Move para o centro */
+}
+
+#modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#modal-body {
+    max-height: 300px;
+    overflow-y: auto; /* Rolagem se o conteúdo for longo */
+}
+
+#lista-carrinho {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-carrinho li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+#lista-carrinho img {
+    width: 30px; /* Largura da imagem */
+    height: 30px; /* Altura da imagem */
+    margin-right: 10px;
+}
