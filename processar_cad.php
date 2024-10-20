@@ -25,5 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         die("Erro na execução da consulta: " . $stmt->error);
     }
+    
+    if ($cadastro_sucesso) {
+        echo json_encode(['status' => 'success']);
+    } else {
+        echo json_encode(['status' => 'error']);
+    }
 }
 ?>

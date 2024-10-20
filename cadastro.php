@@ -105,6 +105,15 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class="popup" id="popup">
+            <img src="./src/images/aprovado.png" alt="aprovado">
+            <h2 class="title">Sucesso!</h2>
+            <p class="desc">Cadastrado realizado!</p>
+            <button class="close-popup-button" type="button" onclick="handlePopup(false)">Fechar</button>
+        </div>
+    </div>
+
 
 
 </body>
