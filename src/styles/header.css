@@ -46,6 +46,7 @@ header {
     display: none;
 }
 
+
 @media screen and (max-width: 1170px) {
     #nav_list,
     #navbar .btn-default {

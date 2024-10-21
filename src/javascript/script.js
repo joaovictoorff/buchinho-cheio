@@ -57,4 +57,32 @@ $(document).ready(function() {
         duration: 1000,
         distance: '20%'
     })
+
+    $(document).ready(function () {
+        $('#form_cad').on('submit', function (e) {
+            e.preventDefault(); 
+
+            $.ajax({
+                type: 'POST',
+                url: 'processar_cad.php',
+                data: $(this).serialize(),
+                dataType: 'json',
+                success: function (response) {
+                    if (response.status === 'success') {
+                        handlePopup(true);
+                    } else {
+                        alert('Erro no cadastro. Por favor, tente novamente.');
+                    }
+                },
+                error: function () {
+                    alert('Erro ao processar o cadastro. Por favor, tente novamente.');
+                }
+            });
+        });
+    });
+
+    function handlePopup(open) {
+        const popup = document.getElementById('popup');
+        popup.classList[open ? 'add' : 'remove']('opened');
+    }
 });

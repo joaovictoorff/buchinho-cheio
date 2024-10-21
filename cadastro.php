@@ -54,10 +54,6 @@
                     <a href="login.html">Entrar</a>
                 </li>
             </ul>
-
-            <button class="btn-default">
-                Doe aqui
-            </button>
         </div>
     </header>
     <div class="row">
@@ -68,55 +64,53 @@
             <div id="div_form">
                 
                 <form id="form_cad" action="processar_cad.php" method="post">
-                    <h3>Cadastre-se</h3>
+                    <h3>informações para envio</h3>
                     <label for="nome">Nome completo:</label>
                     <br>
                     <input class="input_form" name="nome" type="text" id="id_doador" placeholder="ex: João Pereira" required>
-                    <br>
-                    <label for="estado">Estado:</label>
-                    <br>
-                    <select name="estado" id="estado" required>
-                        <option value="...">...</option>
-                        <option value="sp">São Paulo</option>
-                    </select>
-                    <br>
-                    <label for="cidade">Cidade:</label>
-                    <br>
-                    <select name="cidade" id="cidade" required>
-                        <option value="">...</option>
-                        <option value="Sp">SP</option>   
-                    </select>
-                    <br>
-                    <label for="regiao">Região:</label>
-                    <br>
-                    <select name="regiao" id="regiao" required>
-                        <option value="">...</option>
-                        <option value="zl">Zona Leste</option>
-                        <option value="zs">Zona Sul</option>
-                        <option value="zo">Zona Oeste</option>
-                        <option value="zn">Zona Norte</option>
-                    </select>
-                    <br>
                     <br>
                     <label for="telefone">Telefone:</label>
                     <br>
                     <input class="input_form" type="text" name="telefone" id="telefone" placeholder="ex: (11) 90000-0000" required>
                     <br>
+                    <!--<div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                       Deseja receber atualizações pelo whatsapp?
+                    </label>
+                    </div>-->
+
                     <label for="email">Email:</label>
                     <br>
                     <input class="input_form" type="email" name="email" id="email" placeholder="ex: joao.pereira123@gmail.com" required>
                     <br>
-                    <label for="senha">Senha:</label>
+                    <label for="linha">Linha:</label>
                     <br>
-                    <input class="input_form" name="senha" type="password" id="senha" required>
+                    <select name="linha" id="linha" required>
+                        <option value="...">...</option>
+                        <option value="vermelha">vermelha</option>
+                    </select>
                     <br>
-                    <label for="confirme_senha" id="confirme_senha">Confirme sua senha:</label>
+                    <label for="estacao">Estação:</label>
                     <br>
-                    <input class="input_form" type="password" id="confirme_senha" required>
+                    <select name="estacao" id="estacao" required>
+                        <option value="">...</option>
+                        <option value="corinthians-itaquera">corinthians-itaquera</option>
+                    </select>
                     <br>
-                    <input type="submit" id="submit" value="Cadastrar-se">
+                    <br>
+                    <input type="submit" id="submit" value="Enviar">
                 </form>
             </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="popup" id="popup">
+            <img src="./src/images/aprovado.png" alt="aprovado">
+            <h2 class="title">Sucesso!</h2>
+            <p class="desc">Cadastrado realizado!</p>
+            <button class="close-popup-button" type="button" onclick="handlePopup(false)">Fechar</button>
         </div>
     </div>
 
