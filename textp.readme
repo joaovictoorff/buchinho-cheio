@@ -1,6 +1,22 @@
-matheus - tela login/processar.php
-marwin - lista de alimentos doaveis / doaveis.php /processar.doaveis.php
-alicia - pop up (trocar o doe aqui por uma chat bot (ajude-me) ou sla) 
-gab brasil - tabela alimentos (alterar quantidade_estoque por unidade)
 
-marwin, alicia, gab brasil, joao (chat bot backend)
+matheus - lista de alimentos doaveis / doaveis.php 
+joão carrinho de compras (dentro da lista de alimentos)
+marwin - processar_doaveis.php
+
+
+
+
+
+marwin - inform_envio.php
+alterar tela cadastro para informações para envio
+
+
+
+
+
+
+gab brasil - tabela alimentos (alterar quantidade_estoque por unidade)
+gab brasil adicionar coluna cpf a tabela doadores.
+apagar a senha, estado, regiao, cidade, 
+
+marwin, gab brasil, joao, matheus (inteligencia artificial para automação)
