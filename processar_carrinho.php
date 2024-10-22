@@ -1,16 +1,31 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Recebe os dados do carrinho
-    $carrinho = json_decode($_POST['carrinho'], true);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include_once('conexao.php');
+    $nome = $_POST["nome"];
+   $unidade = $_POST["unidade"];
 
-    // Aqui você pode salvar os dados no banco de dados, enviar um e-mail, etc.
-    foreach ($carrinho as $item) {
-        // Processar cada item
-        // Exemplo: salvar no banco de dados
-        // $item['nome'] e $item['quantidade']
+
+    $sql = "INSERT INTO alimentos (nome, unidade) VALUES (?,?)";
+    $stmt = $conexao->prepare($sql);
+
+    if ($stmt === FALSE) {
+        die("Erro na preparação no cadastro: " . $conexao->error);
     }
 
-    echo "Carrinho processado com sucesso!";
-    // Redirecionar ou exibir uma mensagem após o processamento
+
+    $stmt->bind_param("ss", $nome, $unidade);
+
+    if ($stmt->execute()) {
+        header("Location: informacoes.php");
+        exit();
+    } else {
+        die("Erro na execução da consulta: " . $stmt->error);
+    }
+    
+    if ($cadastro_sucesso) {
+        echo json_encode(['status' => 'success']);
+    } else {
+        echo json_encode(['status' => 'error']);
+    }
 }
 ?>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 15-Out-2024 às 00:12
--- Versão do servidor: 8.3.0
--- versão do PHP: 8.2.18
+-- Tempo de geração: 21-Out-2024 às 16:37
+-- Versão do servidor: 8.0.31
+-- versão do PHP: 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -66,6 +66,8 @@ CREATE TABLE IF NOT EXISTS `doadores` (
   `nome` varchar(255) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
   `telefone` varchar(11) DEFAULT NULL,
+  `linha` varchar(255) NOT NULL,
+  `estacao` varchar(255) NOT NULL,
   PRIMARY KEY (`id_doador`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 COMMIT;

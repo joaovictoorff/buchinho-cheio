@@ -2,14 +2,12 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include_once('conexao.php');
     $nome = $_POST["nome"];
-    $estado = $_POST["estado"];
-    $regiao = $_POST["regiao"];
     $telefone = $_POST["telefone"];
     $email = $_POST["email"];
-    $senha = $_POST["senha"];
-    $senha_cripto = password_hash($senha, PASSWORD_DEFAULT);
+   $linha = $_POST["linha"];
+   $estacao = $_POST["estacao"];
 
-    $sql = "INSERT INTO Doadores (nome, estado, regiao, telefone, email, senha) VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO Doadores (nome, email, telefone, linha, estacao) VALUES (?,?,?,?,?)";
     $stmt = $conexao->prepare($sql);
 
     if ($stmt === FALSE) {
@@ -17,10 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    $stmt->bind_param("ssssss", $nome, $estado, $regiao, $telefone, $email, $senha_cripto);
+    $stmt->bind_param("sssss", $nome, $email, $telefone, $linha, $estacao);
 
     if ($stmt->execute()) {
-        header("Location: login.php");
+        header("Location: home.php");
         exit();
     } else {
         die("Erro na execução da consulta: " . $stmt->error);
