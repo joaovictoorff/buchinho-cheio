@@ -1,8 +1,9 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include_once('conexao.php');
-    $nome = $_POST["nome"];
+    $nome_alimentos = $_POST["nome_alimentos"];
    $unidade = $_POST["unidade"];
+   
 
 
     $sql = "INSERT INTO alimentos (nome, unidade) VALUES (?,?)";
