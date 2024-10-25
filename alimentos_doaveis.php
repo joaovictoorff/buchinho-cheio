@@ -71,9 +71,9 @@
             </div>
         <div class="item">
             <img src="src/images/arroz.png" alt="Arroz">
-            <p>Arroz</p>
+            <p name="nome_alimentos">Arroz 2Kg</p>
             <div class="controls">
-                <input type="number" name="quantidade-arroz" value="0" min="0" id="quantidade-arroz">
+                <input type="number" name="unidade" value="0" min="0" id="quantidade-arroz">
                 <input type="button" name="adicionar-arroz" value="Adicionar" onclick="adicionarAoCarrinho('arroz', 'Arroz', 'src/images/arroz.png')">
             </div>
         </div>
@@ -91,6 +91,7 @@
             <div class="controls">
                 <input type="number" name="quantidade-macarrao" value="0" min="0" id="quantidade-macarrao">
                 <input type="button" name="adicionar-macarrao" value="Adicionar" onclick="adicionarAoCarrinho('macarrao', 'Macarrão', 'src/images/macarrao.png')">
+            </div>
             </div>
         <div class="item">
             <img src="src/images/acucar.png" alt="Açúcar">
@@ -196,7 +197,7 @@
                     carrinho[id] = { nome: nome, quantidade: quantidade, imagem: imagem };
                 }
                 atualizarCarrinho();
-                quantidadeInput.value = 0; // Limpa o campo após adicionar
+                quantidadeInput.value = 0; 
             } else {
                 alert('Por favor, insira uma quantidade válida.');
             }

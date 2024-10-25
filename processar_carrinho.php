@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
 
 
-    $sql = "INSERT INTO alimentos (nome, unidade) VALUES (?,?)";
+    $sql = "INSERT INTO alimentos (nome_alimentos, unidade) VALUES (?,?)";
     $stmt = $conexao->prepare($sql);
 
     if ($stmt === FALSE) {
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    $stmt->bind_param("ss", $nome, $unidade);
+    $stmt->bind_param("ss", $nome_alimentos, $unidade);
 
     if ($stmt->execute()) {
         header("Location: informacoes.php");
