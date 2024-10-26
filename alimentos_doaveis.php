@@ -65,13 +65,13 @@
             <img src="src/images/cafe.png" alt="Café">
             <p>Café</p>
             <div class="controls">
-                <input type="number" name="quantidade-cafe" value="0" min="0" id="quantidade-cafe">
+                <input type="number" name="unidade" value="0" min="0" id="quantidade-cafe">
                 <input type="button" name="adicionar-cafe" value="Adicionar" onclick="adicionarAoCarrinho('cafe', 'Café', 'src/images/cafe.png')">
             </div>
             </div>
         <div class="item">
-            <img src="src/images/arroz.png" alt="Arroz">
-            <p name="nome_alimentos">Arroz 2Kg</p>
+            <img src="src/images/arroz.png" alt="Arroz_2kg">
+            <p>Arroz 2kg</p>
             <div class="controls">
                 <input type="number" name="unidade" value="0" min="0" id="quantidade-arroz">
                 <input type="button" name="adicionar-arroz" value="Adicionar" onclick="adicionarAoCarrinho('arroz', 'Arroz', 'src/images/arroz.png')">
@@ -81,7 +81,7 @@
             <img src="src/images/feijao.png" alt="Feijão">
             <p>Feijão</p>
             <div class="controls">
-                <input type="number" name="quantidade-feijao" value="0" min="0" id="quantidade-feijao">
+                <input type="number" name="unidade" value="0" min="0" id="quantidade-feijao">
                 <input type="button" name="adicionar-feijao" value="Adicionar" onclick="adicionarAoCarrinho('feijao', 'Feijão', 'src/images/feijao.png')">
             </div>
         </div>
@@ -89,7 +89,7 @@
             <img src="src/images/macarrao.png" alt="Macarrão">
             <p>Macarrão</p>
             <div class="controls">
-                <input type="number" name="quantidade-macarrao" value="0" min="0" id="quantidade-macarrao">
+                <input type="number" name="unidade" value="0" min="0" id="quantidade-macarrao">
                 <input type="button" name="adicionar-macarrao" value="Adicionar" onclick="adicionarAoCarrinho('macarrao', 'Macarrão', 'src/images/macarrao.png')">
             </div>
             </div>
@@ -97,7 +97,7 @@
             <img src="src/images/acucar.png" alt="Açúcar">
             <p>Açúcar</p>
             <div class="controls">
-                <input type="number" name="quantidade-acucar" value="0" min="0" id="quantidade-acucar">
+                <input type="number" name="unidade" value="0" min="0" id="quantidade-acucar">
                 <input type="button" name="adicionar-acucar" value="Adicionar" onclick="adicionarAoCarrinho('acucar', 'Açúcar', 'src/images/acucar.png')">
             </div>
         </div>
@@ -105,7 +105,7 @@
             <img src="src/images/farinha.png" alt="Farinha de trigo">
             <p>Farinha de trigo</p>
             <div class="controls">
-                <input type="number" name="quantidade-farinha" value="0" min="0" id="quantidade-farinha">
+                <input type="number" name="unidade" value="0" min="0" id="quantidade-farinha">
                 <input type="button" name="adicionar-farinha" value="Adicionar" onclick="adicionarAoCarrinho('farinha', 'Farinha de trigo', 'src/images/farinha.png')">
             </div>
         </div>
@@ -113,7 +113,7 @@
             <img src="src/images/milho.png" alt="Milho">
             <p>Milho</p>
             <div class="controls">
-                <input type="number" name="quantidade-milho" value="0" min="0" id="quantidade-milho">
+                <input type="number" name="unidade" value="0" min="0" id="quantidade-milho">
                 <input type="button" name="adicionar-milho" value="Adicionar" onclick="adicionarAoCarrinho('milho', 'Milho', 'src/images/milho.png')">
             </div>
         </div>
@@ -121,7 +121,7 @@
             <img src="src/images/sardinha.png" alt="Sardinha">
             <p>Sardinha</p>
             <div class="controls">
-                <input type="number" name="quantidade-sardinha" value="0" min="0" id="quantidade-sardinha">
+                <input type="number" name="unidade" value="0" min="0" id="quantidade-sardinha">
                 <input type="button" name="adicionar-sardinha" value="Adicionar" onclick="adicionarAoCarrinho('sardinha', 'Sardinha', 'src/images/sardinha.png')">
             </div>
         </div>
@@ -129,7 +129,7 @@
             <img src="src/images/oleo.png" alt="Óleo">
             <p>Óleo</p>
             <div class="controls">
-                <input type="number" name="quantidade-oleo" value="0" min="0" id="quantidade-oleo">
+                <input type="number" name="unidade" value="0" min="0" id="quantidade-oleo">
                 <input type="button" name="adicionar-oleo" value="Adicionar" onclick="adicionarAoCarrinho('oleo', 'Óleo', 'src/images/oleo.png')">
             </div>
         </div>
@@ -137,7 +137,7 @@
             <img src="src/images/sabonete.png" alt="Sabonete">
             <p>Sabonete</p>
             <div class="controls">
-                <input type="number" name="quantidade-sabonete" value="0" min="0" id="quantidade-sabonete">
+                <input type="number" name="unidade" value="0" min="0" id="quantidade-sabonete">
                 <input type="button" name="adicionar-sabonete" value="Adicionar" onclick="adicionarAoCarrinho('sabonete', 'Sabonete', 'src/images/sabonete.png')">
             </div>
         </div>
@@ -145,7 +145,7 @@
             <img src="src/images/pasta.png" alt="Pasta de dente">
             <p>Pasta de dente</p>
             <div class="controls">
-                <input type="number" name="quantidade-pasta" value="0" min="0" id="quantidade-pasta">
+                <input type="number" name="unidade" value="0" min="0" id="quantidade-pasta">
                 <input type="button" name="adicionar-pasta" value="Adicionar" onclick="adicionarAoCarrinho('pasta', 'Pasta de dente', 'src/images/pasta.png')">
             </div>
         </div>
@@ -153,7 +153,7 @@
             <img src="src/images/escova.png" alt="Escova de dente">
             <p>Escova de dente</p>
             <div class="controls">
-                <input type="number" name="quantidade-escova" value="0" min="0" id="quantidade-escova">
+                <input type="number" name="unidade" value="0" min="0" id="quantidade-escova">
                 <input type="button" name="adicionar-escova" value="Adicionar" onclick="adicionarAoCarrinho('escova', 'Escova de dente', 'src/images/escova.png')">
             </div>
         </div>
@@ -171,10 +171,11 @@
             </div>
             <div id="modal-footer">
                 <button onclick="fecharModal()">Fechar</button>
-                <form id="form-carrinho" method="POST" action="processar_carrinho.php">
-                    <input type="hidden" name="carrinho" id="input-carrinho">
-                    <button type="submit">Processar</button>
-                </form>
+                <form id="form-carrinho" method="POST" action="processar_carrinho.php" onsubmit="return processarCarrinho()">
+    <input type="hidden" name="carrinho" id="input-carrinho">
+    <button type="submit">Processar</button>
+</form>
+
             </div>
         </div>
     </div>
@@ -186,7 +187,7 @@
     <script>
         const carrinho = {};
 
-        function adicionarAoCarrinho(id, nome, imagem) {
+        function adicionarAoCarrinho(id, nome_alimentos, imagem) {
             const quantidadeInput = document.getElementById(`quantidade-${id}`);
             const quantidade = parseInt(quantidadeInput.value);
 
@@ -194,7 +195,7 @@
                 if (carrinho[id]) {
                     carrinho[id].quantidade += quantidade;
                 } else {
-                    carrinho[id] = { nome: nome, quantidade: quantidade, imagem: imagem };
+                    carrinho[id] = { nome_alimentos: nome_alimentos, quantidade: quantidade, imagem: imagem };
                 }
                 atualizarCarrinho();
                 quantidadeInput.value = 0; 
@@ -213,10 +214,10 @@
                 // Cria a imagem do item
                 const img = document.createElement('img');
                 img.src = carrinho[item].imagem;
-                img.alt = carrinho[item].nome;
+                img.alt = carrinho[item].nome_alimentos;
                 
                 li.appendChild(img);
-                li.appendChild(document.createTextNode(`${carrinho[item].nome} - ${carrinho[item].quantidade} unidade(s)`));
+                li.appendChild(document.createTextNode(`${carrinho[item].nome_alimentos} - ${carrinho[item].quantidade} unidade(s)`));
                 
                 // Botão para remover item
                 const btnRemover = document.createElement('button');
@@ -230,8 +231,8 @@
         }
 
         function removerDoCarrinho(id) {
-            delete carrinho[id]; // Remove o item do carrinho
-            atualizarCarrinho(); // Atualiza a lista do carrinho
+            delete carrinho[id];
+            atualizarCarrinho();
         }
 
         function abrirModal() {
@@ -245,14 +246,14 @@
         function processarCarrinho() {
             if (Object.keys(carrinho).length === 0) {
                 alert('O carrinho está vazio!');
-                return;
+                return false;
             }
             
-            // Atualiza o campo oculto com os dados do carrinho
-            document.getElementById('input-carrinho').value = JSON.stringify(carrinho);
-            
-            // Submete o formulário
-            document.getElementById('form-carrinho').submit();
+            const carrinhoJSON = JSON.stringify(carrinho);
+            document.getElementById('input-carrinho').value = carrinhoJSON;
+            console.log("Carrinho JSON enviado:", carrinhoJSON); // Verifique o JSON no console
+
+            return true; // Permite o envio do formulário
         }
 
         // Fecha o modal ao clicar fora dele
@@ -262,7 +263,7 @@
                 modal.style.display = 'none';
             }
         }
-    </script>
+        </script>
 
 </body>
 </html>

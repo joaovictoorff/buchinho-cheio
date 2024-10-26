@@ -1,32 +1,40 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include_once('conexao.php');
-    $nome_alimentos = $_POST["nome_alimentos"];
-   $unidade = $_POST["unidade"];
-   
 
+    // Decodificar o JSON do carrinho
+    $carrinho = json_decode($_POST["carrinho"], true);
 
-    $sql = "INSERT INTO alimentos (nome_alimentos, unidade) VALUES (?,?)";
+    if (!is_array($carrinho)) {
+        die("Erro: formato do carrinho inválido.");
+    }
+
+    // Preparar a inserção
+    $sql = "INSERT INTO alimentos (nome_alimentos, unidade) VALUES (?, ?)";
     $stmt = $conexao->prepare($sql);
 
     if ($stmt === FALSE) {
-        die("Erro na preparação no cadastro: " . $conexao->error);
+        die("Erro na preparação no produto: " . $conexao->error);
     }
 
+    // Inserir cada item do carrinho
+    foreach ($carrinho as $item) {
+        $nome_alimentos = $item['nome_alimentos'];
+        $unidade = $item['quantidade'];
 
-    $stmt->bind_param("ss", $nome_alimentos, $unidade);
+        // Use "si" em bind_param: "s" para string e "i" para inteiro
+        $stmt->bind_param("si", $nome_alimentos, $unidade);
 
-    if ($stmt->execute()) {
-        header("Location: informacoes.php");
-        exit();
-    } else {
-        die("Erro na execução da consulta: " . $stmt->error);
+        if (!$stmt->execute()) {
+            die("Erro na execução da consulta: " . $stmt->error);
+        }
     }
-    
-    if ($cadastro_sucesso) {
-        echo json_encode(['status' => 'success']);
-    } else {
-        echo json_encode(['status' => 'error']);
-    }
+
+    $stmt->close();
+    $conexao->close();
+
+    // Redirecionar após o processamento
+    header("Location: informacoes.php");
+    exit();
 }
 ?>

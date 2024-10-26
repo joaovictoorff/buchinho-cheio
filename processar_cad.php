@@ -1,33 +1,31 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include_once('conexao.php');
     $nome = $_POST["nome"];
-    $telefone = $_POST["telefone"];
     $email = $_POST["email"];
-   $linha = $_POST["linha"];
-   $estacao = $_POST["estacao"];
+    $telefone = $_POST["telefone"];
+    $linha = $_POST["linha"];
 
-    $sql = "INSERT INTO Doadores (nome, email, telefone, linha, estacao) VALUES (?,?,?,?,?)";
+    $sql = "INSERT INTO doadores (nome, email, telefone, linha) VALUES (?, ?, ?, ?)";
     $stmt = $conexao->prepare($sql);
 
     if ($stmt === FALSE) {
-        die("Erro na preparação no cadastro: " . $conexao->error);
+        die("Erro na preparação da consulta: " . $conexao->error);
     }
 
-
-    $stmt->bind_param("sssss", $nome, $email, $telefone, $linha, $estacao);
+    $stmt->bind_param("ssss", $nome, $email, $telefone, $linha);
 
     if ($stmt->execute()) {
-        header("Location: home.php");
+        echo "Cadastro realizado com sucesso!";
+        $stmt->close();
+        $conexao->close();
         exit();
     } else {
         die("Erro na execução da consulta: " . $stmt->error);
     }
-    
-    if ($cadastro_sucesso) {
-        echo json_encode(['status' => 'success']);
-    } else {
-        echo json_encode(['status' => 'error']);
-    }
 }
 ?>
+
