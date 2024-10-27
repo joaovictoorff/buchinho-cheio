@@ -9,7 +9,6 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="src/javascript/script.js"></script>
     <link rel="stylesheet" href="src/styles/cadastro.css">
     <link rel="shortcut icon" href="src/images/buchinho.png" type="image/x-icon">
     <title>informações para coleta | Buchinho Cheio</title>
@@ -25,9 +24,7 @@
                 <li class="nav-item active">
                     <a href="cadastro.html">Cadastre-se</a>
                 </li>
-                <li class="nav-item">
-                    <a href="login.html">Entrar</a>
-                </li>
+                
             </ul>
             <button class="btn-default">
                 Doe aqui
@@ -56,12 +53,12 @@
         </div>
         <div class="col-md-6">
             <div id="div_form">
-            <form id="form_cad" action="processar_cad.php" method="post">
+            <form id="form_cad" action="processar_info.php" method="post">
 
                     <h3>informações para envio</h3>
                     <label for="nome">Nome completo:</label>
                     <br>
-                    <input class="input_form" name="nome" type="text" id="id_doador" placeholder="ex: João Pereira" required>
+                    <input class="input_form" name="nome" type="text" id="nome" placeholder="ex: João Pereira" required>
                     <br>
                     <label for="telefone">Telefone:</label>
                     <br>
