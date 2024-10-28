@@ -14,7 +14,7 @@ if(!$conexao){
 }
 
 
-$sql = "SELECT id_alimento, nome, quantidade_estoque, data_validade FROM alimentos";
+$sql = "SELECT id_alimento, nome, quantidade_estoque, data_cadastro FROM alimentos";
 $resultado = $conexao->query($sql);
 ?>
 

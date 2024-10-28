@@ -17,23 +17,15 @@
 
             <ul id="nav_list">
                 <li class="nav-item active">
-                    <a href="home.html">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#menu">Produtos</a>
+                    <a href="home.php">Início</a>
                 </li>
                 <li class="nav-item">
                     <a href="#testimonials">Histórias</a>
                 </li>
-                <li class="nav-item">
-                    <a href="cadastro.html">Cadastre-se</a>
-                </li>
-                <li class="nav-item">
-                    <a href="login.html">Entrar</a>
-                </li>
+               
             </ul>
 
-            <a href="alimentos_doaveis.html">
+            <a href="alimentos_doaveis.php">
                 <button class="btn-default">
                      Doe aqui
                 </button>
@@ -47,7 +39,7 @@
         <div id="mobile_menu">
             <ul id="mobile_nav_list">
                 <li class="nav-item">
-                    <a href="home.html">Início</a>
+                    <a href="home.php">Início</a>
                 </li>
                 <li class="nav-item">
                     <a href="#menu">Produtos</a>
@@ -55,15 +47,10 @@
                 <li class="nav-item">
                     <a href="#testimonials">Nossa história</a>
                 </li>
-                <li class="nav-item">
-                    <a href="cadastro.html">Cadastre-se</a>
-                </li>
-                <li class="nav-item">
-                    <a href="login.html">Entrar</a>
-                </li>
+               
             </ul>
 
-            <a href="alimentos_doaveis.html">
+            <a href="alimentos_doaveis.php">
                 <button class="btn-default">
                      Doe aqui
                 </button>
@@ -85,9 +72,7 @@
                 </p>
 
                 <div id="cta_buttons">
-                    <a href="#" class="btn-default">
-                        Ver Cestas
-                    </a>
+                  
                 </div>
 
                 <div class="social-media-buttons">
