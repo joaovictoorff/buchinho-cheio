@@ -2,30 +2,30 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include_once('conexao.php');
 
-    // Decodificar o JSON do carrinho
     $carrinho = json_decode($_POST["carrinho"], true);
 
     if (!is_array($carrinho)) {
         die("Erro: formato do carrinho inválido.");
     }
 
-    // Preparar a inserção
     $sql = "INSERT INTO alimentos (nome_alimentos, unidade) VALUES (?, ?)";
     $stmt = $conexao->prepare($sql);
 
     if ($stmt === FALSE) {
-        die("Erro na preparação no produto: " . $conexao->error);
+        die("Erro na preparação do produto: " . $conexao->error);
     }
 
-    // Inserir cada item do carrinho
+    $id_alimentos = [];
+
     foreach ($carrinho as $item) {
         $nome_alimentos = $item['nome_alimentos'];
         $unidade = $item['quantidade'];
 
-        // Use "si" em bind_param: "s" para string e "i" para inteiro
         $stmt->bind_param("si", $nome_alimentos, $unidade);
 
-        if (!$stmt->execute()) {
+        if ($stmt->execute()) {
+            $id_alimentos[] = $stmt->insert_id;
+        } else {
             die("Erro na execução da consulta: " . $stmt->error);
         }
     }
@@ -33,7 +33,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
     $conexao->close();
 
-    // Redirecionar após o processamento
+    // Armazenar os IDs de alimentos em uma sessão para serem usados na próxima página
+    session_start();
+    $_SESSION['id_alimentos'] = $id_alimentos;
+
     header("Location: informacoes.php");
     exit();
 }
