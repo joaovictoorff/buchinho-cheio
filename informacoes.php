@@ -57,10 +57,10 @@ session_start();
                     <label for="email">Email:</label><br>
                     <input class="input_form" type="email" name="email" id="email" placeholder="ex: joao.pereira123@gmail.com" required><br>
                     
-                    <label for="linha">Linha:</label><br>
-                    <select name="linha" id="linha" required>
+                    <label for="estacao">estacao:</label><br>
+                    <select name="estacao" id="estacao" required>
                         <option value="">Selecione...</option>
-                        <option value="vermelha">Vermelha</option>
+                        <option value="shopping_metro_itaquera">Shopping_Metro_Itaquera</option>
                     </select><br><br>
 
                     <input type="submit" id="submit" value="Enviar">

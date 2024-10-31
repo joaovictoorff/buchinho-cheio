@@ -1,48 +1,55 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-session_start();
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include_once('conexao.php');
+    session_start();
 
-    $nome = $_POST["nome"];
-    $email = $_POST["email"];
-    $telefone = $_POST["telefone"];
-    $linha = $_POST["linha"];
-    $ids_alimentos = $_SESSION['ids_alimentos']; // Recuperar os IDs dos alimentos salvos na sessão
-
-    $sql = "INSERT INTO doadores (nome, email, telefone, linha) VALUES (?, ?, ?, ?)";
-    $stmt = $conexao->prepare($sql);
-
-    if ($stmt === FALSE) {
-        die("Erro na preparação da consulta: " . $conexao->error);
+    if (!isset($_SESSION['id_alimentos']) || empty($_SESSION['id_alimentos'])) {
+        die("Erro: Nenhum alimento no carrinho.");
     }
 
-    $stmt->bind_param("ssss", $nome, $email, $telefone, $linha);
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $telefone = $_POST['telefone'];
+    $estacao = $_POST['estacao'];
 
-    if ($stmt->execute()) {
-        $id_doador = $stmt->insert_id;
+    // Definir unidade (verifique se está sendo enviada ou é um valor fixo)
+    $unidade = 1; // Exemplo de valor fixo para unidade; modifique conforme necessário
 
-        $sqlDoacao = "INSERT INTO doacoes (id_doador, id_alimento, unidade, estacao, data_doacao) VALUES (?, ?, ?, ?, NOW())";
-        $stmtDoacao = $conexao->prepare($sqlDoacao);
+    $sqlDoador = "INSERT INTO doadores (nome, email, telefone, estacao) VALUES (?, ?, ?, ?)";
+    $stmtDoador = $conexao->prepare($sqlDoador);
+    $stmtDoador->bind_param("ssss", $nome, $email, $telefone, $estacao);
 
-        if ($stmtDoacao === FALSE) {
-            die("Erro na preparação da consulta de doação: " . $conexao->error);
-        }
-
-        foreach ($ids_alimentos as $id_alimento) {
-            $unidade = 1; // Ajuste para a unidade conforme necessário
-            $stmtDoacao->bind_param("iiis", $id_doador, $id_alimento, $unidade, $linha);
-            if (!$stmtDoacao->execute()) {
-                die("Erro na execução da consulta de doação: " . $stmtDoacao->error);
-            }
-        }
-
-        header("Location: home.php");
-        exit();
-    } else {
-        die("Erro na execução da consulta de doador: " . $conexao->errno);
+    if (!$stmtDoador->execute()) {
+        die("Erro ao inserir doador: " . $stmtDoador->error);
     }
+
+    $id_doador = $stmtDoador->insert_id;
+    $stmtDoador->close();
+
+    $sqlDoacao = "INSERT INTO doacoes (id_doador, id_alimento, unidade, estacao, data_doacao) VALUES (?, ?, ?, ?, ?)";
+    $stmtDoacao = $conexao->prepare($sqlDoacao);
+
+    if ($stmtDoacao === FALSE) {
+        die("Erro na preparação da doação: " . $conexao->error);
+    }
+
+    // Definir data de doação
+    $data_doacao = date("Y-m-d H:i:s");
+
+    foreach ($_SESSION['id_alimentos'] as $id_alimento) {
+        $stmtDoacao->bind_param("iiiss", $id_doador, $id_alimento, $unidade, $estacao, $data_doacao);
+
+        if (!$stmtDoacao->execute()) {
+            die("Erro ao inserir doação: " . $stmtDoacao->error);
+        }
+    }
+
+    $stmtDoacao->close();
+    $conexao->close();
+
+    unset($_SESSION['id_alimentos']);
+    
+    header("Location: home.php");
+    exit();
 }
 ?>

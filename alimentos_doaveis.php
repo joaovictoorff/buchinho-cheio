@@ -23,19 +23,7 @@ session_start();
             <ul id="nav_list">
                 <li class="nav-item active">
                     <a href="home.html">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#menu">Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#testimonials">Histórias</a>
-                </li>
-                <li class="nav-item">
-                    <a href="cadastro.html">Cadastre-se</a>
-                </li>
-                <li class="nav-item">
-                    <a href="login.html">Entrar</a>
-                </li>
+                </li>              
             </ul>
 
             <button id="mobile_btn">
@@ -47,18 +35,6 @@ session_start();
             <ul id="mobile_nav_list">
                 <li class="nav-item">
                     <a href="home.html">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#menu">Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#testimonials">Nossa história</a>
-                </li>
-                <li class="nav-item">
-                    <a href="cadastro.html">Cadastre-se</a>
-                </li>
-                <li class="nav-item">
-                    <a href="login.html">Entrar</a>
                 </li>
             </ul>
         </div>

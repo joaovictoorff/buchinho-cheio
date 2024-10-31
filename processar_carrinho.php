@@ -33,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
     $conexao->close();
 
-    // Armazenar os IDs de alimentos em uma sessão para serem usados na próxima página
     session_start();
     $_SESSION['id_alimentos'] = $id_alimentos;
 
