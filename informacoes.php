@@ -26,7 +26,6 @@ session_start();
                     <a href="home.php">Início</a>
                 </li>
             </ul>
-            
         </nav>
         <div id="mobile_menu">
             <ul id="mobile_nav_list">
@@ -57,11 +56,15 @@ session_start();
                     <label for="email">Email:</label><br>
                     <input class="input_form" type="email" name="email" id="email" placeholder="ex: joao.pereira123@gmail.com" required><br>
                     
-                    <label for="estacao">estacao:</label><br>
+                    <label for="estacao">Estação:</label><br>
                     <select name="estacao" id="estacao" required>
                         <option value="">Selecione...</option>
                         <option value="shopping_metro_itaquera">Shopping_Metro_Itaquera</option>
                     </select><br><br>
+
+                    <!-- Novo campo para data de agendamento -->
+                    <label for="data_agendamento">Data do Agendamento:</label><br>
+                    <input class="input_form" type="date" name="data_agendamento" id="data_agendamento" required><br><br>
 
                     <input type="submit" id="submit" value="Enviar">
                 </form>

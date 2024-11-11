@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Erro na preparação do produto: " . $conexao->error);
     }
 
-    $id_alimentos = [];
+    $id_alimentos = []; // Armazenará id e quantidade de cada item para uso posterior
 
     foreach ($carrinho as $item) {
         $nome_alimentos = $item['nome_alimentos'];
@@ -24,7 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("si", $nome_alimentos, $unidade);
 
         if ($stmt->execute()) {
-            $id_alimentos[] = $stmt->insert_id;
+            $id_alimentos[] = [
+                'id' => $stmt->insert_id,
+                'quantidade' => $unidade // Salva o ID e a quantidade no array
+            ];
         } else {
             die("Erro na execução da consulta: " . $stmt->error);
         }
@@ -34,9 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conexao->close();
 
     session_start();
-    $_SESSION['id_alimentos'] = $id_alimentos;
+    $_SESSION['id_alimentos'] = $id_alimentos; // Armazena o array completo na sessão
 
     header("Location: informacoes.php");
     exit();
 }
-?>
