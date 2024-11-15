@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -41,11 +38,8 @@ session_start();
         </div>
         <div class="col-md-6">
             <div id="div_form">
-                <form id="form_cad" action="processar_info.php" method="post">
+                <form id="form_cad" action="processar_cad.php" method="post" onsubmit="return validarSenha()">
                     <h3>Informações para envio</h3>
-                    
-                    <!-- Campo oculto para o ID da doação -->
-                    <input type="hidden" name="id_doacao" value="<?php echo isset($_GET['id_doacao']) ? htmlspecialchars($_GET['id_doacao']) : ''; ?>">
 
                     <label for="nome">Nome completo:</label><br>
                     <input class="input_form" name="nome" type="text" id="nome" placeholder="ex: João Pereira" required><br>
@@ -55,21 +49,37 @@ session_start();
                     
                     <label for="email">Email:</label><br>
                     <input class="input_form" type="email" name="email" id="email" placeholder="ex: joao.pereira123@gmail.com" required><br>
-                    
-                    <label for="estacao">Estação:</label><br>
-                    <select name="estacao" id="estacao" required>
-                        <option value="">Selecione...</option>
-                        <option value="shopping_metro_itaquera">Shopping_Metro_Itaquera</option>
-                    </select><br><br>
+                    <?php if (isset($_GET['erro']) && $_GET['erro'] === 'usuario_existente'): ?>
+                    <p style="color: red;">O e-mail já está cadastrado. Tente outro!</p>
+                    <?php endif; ?>
 
-                    <!-- Novo campo para data de agendamento -->
-                    <label for="data_agendamento">Data do Agendamento:</label><br>
-                    <input class="input_form" type="date" name="data_agendamento" id="data_agendamento" required><br><br>
+                    <label for="senha">Senha:</label><br>
+                    <input class="input_form" type="password" name="senha" id="senha" required><br>
+
+                    <label for="confirma_senha">Confirme a sua senha:</label><br>
+                    <input class="input_form" type="password" name="confirma_senha" id="confirma_senha" required><br>
+                    <span id="mensagem_de_erro" class="erro" style="color: red;"></span>
+                    
 
                     <input type="submit" id="submit" value="Enviar">
                 </form>
             </div>
         </div>
     </div>
+    <script>
+        function validarSenha() {
+            const senha = document.getElementById("senha").value;
+            const confirmaSenha = document.getElementById("confirma_senha").value;
+            const mensagemErro = document.getElementById("mensagem_de_erro");
+
+            if (senha !== confirmaSenha) {
+                mensagemErro.textContent = "As senhas não coincidem.";
+                return false;
+            } else {
+                mensagemErro.textContent = ""; 
+                return true;
+            }
+        }
+    </script>
 </body>
 </html>

@@ -22,7 +22,7 @@ session_start();
 
             <ul id="nav_list">
                 <li class="nav-item active">
-                    <a href="home.html">Início</a>
+                    <a href="home.php">Início</a>
                 </li>              
             </ul>
 
@@ -30,11 +30,10 @@ session_start();
                 <i class="fa-solid fa-bars"></i>
             </button>
         </nav>
-
         <div id="mobile_menu">
             <ul id="mobile_nav_list">
                 <li class="nav-item">
-                    <a href="home.html">Início</a>
+                    <a href="home.php">Início</a>
                 </li>
             </ul>
         </div>
