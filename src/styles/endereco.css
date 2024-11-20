@@ -1,0 +1,91 @@
+/* Estilo global */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: #007BFF;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Container esquerdo */
+.container-esquerda {
+    position: fixed;
+    top: 50%; /* Centraliza verticalmente */
+    left: 20px;
+    transform: translateY(-50%); /* Ajusta para o centro exato */
+    max-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+.container-esquerda h2 {
+    margin-top: 0;
+}
+
+.container-esquerda ul {
+    padding-left: 20px;
+}
+
+/* Estilo do formulário */
+form {
+    max-width: calc(100% - 360px); /* Garante espaço suficiente ao lado do container esquerdo */
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Estilo dos campos de entrada */
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Estilo do botão */
+button {
+    background-color: #007BFF;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
