@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalização de Doação</title>
+    <link rel="stylesheet" href="src/styles/endereco.css">
+    <link rel="stylesheet" href="src/styles/styles.css">
+</head>
+<body>
+    <div class="container-esquerda">
+        <h2>Itens no Carrinho</h2>
+        <div id="itens-carrinho">
+            <!-- Os itens do carrinho serão carregados aqui com JavaScript -->
+        </div>
+    </div>
+
+    <form action="/enviar-endereco" method="POST">
+        <h1>Informe seu Endereço</h1>
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" required>
+
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade" required>
+
+        <label for="estado">Estado:</label>
+        <select id="estado" name="estado" required>
+            <option value="">Selecione o estado</option>
+            <!-- Adicionei alguns estados para exemplo -->
+            <option value="SP">São Paulo</option>
+            <option value="RJ">Rio de Janeiro</option>
+        </select>
+
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" name="cep" placeholder="00000-000" required>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        // Recupera o carrinho do localStorage
+        const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    
+        // Função para mostrar os itens do carrinho
+        function exibirCarrinho() {
+            const containerCarrinho = document.getElementById('itens-carrinho');
+            if (carrinho.length > 0) {
+                carrinho.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.classList.add('item-carrinho');
+                    
+                    // Verificando se o preço está disponível
+                    const precoItem = item.preco || 0; // Caso o preço não exista, atribui 0
+    
+                    // Exibindo as informações do item
+                    itemDiv.innerHTML = `
+                        <strong>${item.nome_alimentos}</strong><br>
+                        Quantidade: ${item.quantidade} <br>
+                        Preço: R$ ${precoItem.toFixed(2)} <br>
+                        Total: R$ ${(precoItem * item.quantidade).toFixed(2)}<br>
+                    `;
+                    
+                    // Adicionando ao container da página
+                    containerCarrinho.appendChild(itemDiv);
+                });
+            } else {
+                containerCarrinho.innerHTML = "<p>O carrinho está vazio.</p>";
+            }
+        }
+    
+        // Chama a função para exibir os itens do carrinho
+        exibirCarrinho();
+    </script>
+    
+
+</body>
+</html>
